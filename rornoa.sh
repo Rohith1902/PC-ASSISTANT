@@ -19,6 +19,7 @@ do
 			echo "4.Business-startup"
 			echo "5.Verilog"
 			echo "6.File communication "
+			echo "7.Exit"
 
 		read choice
 
@@ -28,18 +29,34 @@ do
 			1.Git - repo creation
 			2.Git daily push
 			3.Git cloning projects
-			4.Git pulling the latest 
+			4.Git pulling the latest
+			5.Want to check commits  
 			"
 			echo "What are you going to do : "
 			read choice 
 			if [ "$choice" -eq 1 ]; then
-				echo "--"
+				source Git.sh
+				git_repo_creation
+
 			elif [ "$choice" -eq 2 ]; then
 				source Git.sh
 				git_push
-
+			elif [ "$choice" -eq 3 ]; then
+				source Git.sh
+				git_clone
+			elif [ "$choice" -eq 4 ]; then
+				source Git.sh
+				git_pull
+			elif [ "$choice" -eq 5 ];then
+				git log
+			
+			elif [ "$choice" -eq 6 ];then 
+				break
+			else 
+				echo "Wrong call try again\n\n"
 
 			fi
+		
 
 
 		elif [ "$choice" -eq 2 ]; then
@@ -68,8 +85,7 @@ do
         done
 
 		elif [ "$choice" -eq 3 ] ; then
-        while true
-        do
+        
 			echo "\n\n🛡️ Agents online. "
 			echo "Agents starting "
 			echo "⚡ Welcome back, Commander."
@@ -77,7 +93,10 @@ do
 			echo "Sucessfully loaded "
 
 			dolphin "/mnt/Apps/Project_bin/AI agents/"
-        done
+        
+		
+		
+		
 		elif [ "$choice" -eq 4 ]; then
         while true
         do
@@ -105,14 +124,16 @@ do
 				echo "Match day approaches "
 				echo "Preparing Today's Session "
 
-				echo "Enter the ship to be sailedd : "
-                	        read choice
+				echo "Enter the ship to be sailed : "
+                read choice
 
-				echo "1.POC - BEST - ARCH 1 "
-				echo "2.Pqc-snn-chip-complete "
-				echo "3.Kyber-deploy "
-				echo "4.Sri hari"
-
+				echo "1.PQC ARCH 1 "
+				echo "2.PQC ARCH 2 "
+				echo "3.PQC ARCH 3"
+				echo "4.Pqc-snn-chip-complete "
+				echo "5.Kyber-deploy "
+				echo "6.Sri hari"
+				echo "7.Exit"
 
 					if [ "$choice" -eq 1 ]; then
 
@@ -122,19 +143,38 @@ do
 
 
 						dolphin "/mnt/Apps/Project_bin/buisness-startup/PYQ/Code/PQC - BEST - ARCH 1/"
+						xdg-open "https://github.com/Rohith1902/AI-TRACKING-PQC-SYSTEM"
 
 					elif [ "$choice" -eq 2 ]; then
 
-						dolphin "/mnt/Apps/Project_bin/buisness-startup/PYQ/Code/pqc_snn_chip_complete/"
+						dolphin "/mnt/Apps/Project_bin/buisness-startup/PYQ/Code/PQC - BEST - ARCH 2/"
+						
 
 					elif [ "$choice" -eq 3 ]; then
 
-						dolphin "/mnt/Apps/Project_bin/buisness-startup/PYQ/Code/kyber-deploy/"
+						dolphin "/mnt/Apps/Project_bin/buisness-startup/PYQ/Code/PQC - BEST - ARCH 3/"
 
 
 					elif [ "$choice" -eq 4 ];then
 
+						dolphin "/mnt/Apps/Project_bin/buisness-startup/PYQ/Code/pqc_snn_chip_complete/"
+
+					elif [ "$choice" -eq 5 ];then
+
+						dolphin "/mnt/Apps/Project_bin/buisness-startup/PYQ/Code/kyber-deploy/"
+					
+					elif [ "$choice" -eq 6 ];then
+
 						dolphin "/mnt/Apps/Project_bin/buisness-startup/PYQ/Code/sri-hari/"
+					
+					elif [ "$choice" -eq 7 ];then
+
+						echo "Startup over !! Work every waking hours !!"
+						break
+					else 
+						echo "Try again stronger "
+
+					
 					fi
 			elif [ "$choice" -eq 2 ]; then
 				echo "Rendering architecture..."
@@ -147,8 +187,9 @@ do
 				echo "1.Arch 1"
 				echo "2.Arch 2"
 				echo "3.Arch 3"
-				echo "Overall generals "
-				echo "Fund rise "
+				echo "4.Overall generals "
+				echo "5.Fund rise "
+				echo "6.Exit"
 
 				if [ "$choice" -eq 1 ]; then
 					dolphin "/mnt/Apps/Project_bin/buisness-startup/PYQ/Research/Arch -1/"
@@ -168,12 +209,25 @@ do
 					dolphin_pid=$!
 					read
 					kill "$dolphin_pid"
-				fi
-			fi
+				elif [ "$choice" -eq  6]; then
+					break
+				else 
+					echo "Try again"
+				fi   #fi for files
+			fi  # fi for business startup
 
-        done
-        fi
-        done
+        
+		done  #closing business loop
+		elif [ "$choice" -eq 5 ]; then
+			source verilog.sh
+
+		fi
+
+	done
+        
+
+		
+        
 
 	elif [ "$choice" -eq 2 ]; then
 
@@ -187,7 +241,10 @@ do
 
 		sudo reboot
 
-    echo "End "
+	else
+		echo "Mission completed "
+
+    
     fi
 
 done

@@ -1,5 +1,16 @@
 git_repo_creation(){
-    echo "hi"
+    git init
+    git add .
+    echo "Enter the First commit message : ";
+    read commit
+    git inital commit -m "$commit"
+    echo "\n\nCreate a repository in you git hub and enter the link : "
+    read repo
+    git remote add origin "$repo"
+    git remote -v
+    git branch -M main
+    git push -u origin main 
+
 }
 git_push(){
     source path.sh
