@@ -18,12 +18,29 @@ do
 			echo "3.AI Agents "
 			echo "4.Business-startup"
 			echo "5.Verilog"
-			echo "6.File communication - LINUX"
+			echo "6.File communication "
 
 		read choice
 
 		if [ "$choice" -eq 1 ]; then
-			echo "Git"
+			source path.sh
+			echo "
+			1.Git - repo creation
+			2.Git daily push
+			3.Git cloning projects
+			4.Git pulling the latest 
+			"
+			echo "What are you going to do : "
+			read choice 
+			if [ "$choice" -eq 1 ]; then
+				echo "--"
+			elif [ "$choice" -eq 2 ]; then
+				source Git.sh
+				git_push
+
+
+			fi
+
 
 		elif [ "$choice" -eq 2 ]; then
 			echo "\n\nGenkai wo koeraaaa \n\n\n"
