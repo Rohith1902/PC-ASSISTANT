@@ -23,5 +23,17 @@ git_push(){
     echo "Suceesfully pushed"
 
 }
+git_clone(){
+    echo "Enter the repo link to clone : "
+    read clone
+    echo clone "$clone"
+}
+
+git_pull(){
+    git pull origin work 
+    git add .
+    git commit -m "My changes "
+    git push
+}
 
 git_push

@@ -3,6 +3,7 @@ do
 	echo "OKAERIII !!! SENCHOO \n\n\n"
 	echo "1.All projects"
 	echo "2.Projects track"
+	echo "3.To create or search a Directory or file"
 	echo "Update"
 	echo "reboot"
     echo "The next arc is yours to decide : "
@@ -67,6 +68,7 @@ do
 
 				echo "1.Diveeee  "
 				echo "2.Track  "
+				echo "3.Exit"
  			echo "Want to play or just rest : "
 			read choice
 
@@ -74,12 +76,14 @@ do
 
 				echo "Hearrr meee Roarrrr !!"
 
-				file="/mnt/Apps/Project_bin/intern/new.html"
+				file="/mnt/Apps/Project_bin/intern/INTERN-ME-command-center-day-reset.html"
 				cat "$file"
 
 			elif [ "$choice" -eq 2 ]; then
 
 				echo "Yukkuri 😌🍃"
+
+			elif [ "$choice" -eq 3 ]; then
 				break
 			fi
         done
@@ -218,9 +222,10 @@ do
 
         
 		done  #closing business loop
-		elif [ "$choice" -eq 5 ]; then
+		elif [ "$choice" -eq 5 ]; then 
 			source verilog.sh
-
+		elif [ "$choice" -eq 7]; then
+			break
 		fi
 
 	done
@@ -234,16 +239,41 @@ do
 		echo "Project Tracked "
 
 	elif [ "$choice" -eq 3 ]; then
+		while true
+		do
+		echo "1.To create a folder "
+		echo "2.To find the folder "
+		
+		echo "3.Exit"
 
-		sudo zypper clean  --all && sudo zypper ref -fsb && sudo zypper dup -l --allow-vendor-change
+		echo "\n\nEnter the option : "
+		read choice 
+		source dir.sh
+
+		if [ "$choice" -eq 1 ]; then
+			create_dir
+		elif [ "$choice" -eq 2 ]; then
+			go_to_dir
+		elif [ "$choice" -eq 2 ]; then
+			echo "Done !! \n\n"
+			break
+
+
+		fi
+		done
 
 	elif [ "$choice" -eq 4 ]; then
 
+		sudo zypper clean  --all && sudo zypper ref -fsb && sudo zypper dup -l --allow-vendor-change
+
+	elif [ "$choice" -eq 5 ]; then
+
 		sudo reboot
+	
 
 	else
 		echo "Mission completed "
-
+		break
     
     fi
 
