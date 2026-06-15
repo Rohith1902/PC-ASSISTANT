@@ -25,13 +25,13 @@ do
 		read choice
 
 		if [ "$choice" -eq 1 ]; then
-			source path.sh
 			echo "
 			1.Git - repo creation
 			2.Git daily push
 			3.Git cloning projects
 			4.Git pulling the latest
 			5.Want to check commits  
+			6.Exit
 			"
 			echo "What are you going to do : "
 			read choice 
@@ -53,8 +53,11 @@ do
 			
 			elif [ "$choice" -eq 6 ];then 
 				break
+			
+
 			else 
 				echo "Wrong call try again\n\n"
+			
 
 			fi
 		
