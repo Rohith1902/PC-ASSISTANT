@@ -42,7 +42,6 @@ do
 			elif [ "$choice" -eq 2 ]; then
 				source Git.sh
 				git_push
-				
 			elif [ "$choice" -eq 3 ]; then
 				source Git.sh
 				git_clone

@@ -13,6 +13,7 @@ git_repo_creation(){
 
 }
 git_push(){
+    echo "helloooo"S
     source path.sh
     echo "Enter the commit message : "
     read commit 
