@@ -10,8 +10,6 @@ do
 	read choice
 
 	if [ "$choice" -eq 1 ]; then
-
-		echo "Luckiest dynasty to enter : "
 		while true
 		do
 			echo "1.Git "
@@ -21,7 +19,7 @@ do
 			echo "5.Verilog"
 			echo "6.File communication "
 			echo "7.Exit"
-
+		echo "Luckiest dynasty to enter : "
 		read choice
 
 		if [ "$choice" -eq 1 ]; then
@@ -228,16 +226,11 @@ do
 		done  #closing business loop
 		elif [ "$choice" -eq 5 ]; then 
 			source verilog.sh
-		elif [ "$choice" -eq 7]; then
+		elif [ "$choice" -eq 7 ]; then
 			break
 		fi
 
-	done
-        
-
-		
-        
-
+	done       
 	elif [ "$choice" -eq 2 ]; then
 
 		echo "Project Tracked "
