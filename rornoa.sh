@@ -49,6 +49,7 @@ do
 				source Git.sh
 				git_pull
 			elif [ "$choice" -eq 5 ];then
+				source Git.sh
 				git log
 			
 			elif [ "$choice" -eq 6 ];then 
