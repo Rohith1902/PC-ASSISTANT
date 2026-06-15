@@ -7,7 +7,7 @@
 				if [ -d "$path" ]; then
 					cd "$path" || exit
 					echo "We are in the territory : $(pwd)"
-					break
+					return
 				else
 					echo "Invalid territory , try again :( "
 
