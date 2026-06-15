@@ -1,7 +1,6 @@
 
             
-			while true 
-			do 
+			
 				echo "Enter the path of your folder : "
 				read path
 
@@ -15,4 +14,4 @@
 				fi
 
 
-			done
+			
