@@ -1,11 +1,18 @@
+#!/bin/bash
+
+ECHO "WELCOME TO MY TERMINAL"
+source pqc.sh
+
+
 while true
 do
 	echo "OKAERIII !!! SENCHOO \n\n\n"
 	echo "1.All projects"
 	echo "2.Projects track"
 	echo "3.To create or search a Directory or file"
-	echo "Update"
-	echo "reboot"
+	echo "4.TO_DO List"
+	echo "5.Update"
+	echo "6.reboot"
     echo "The next arc is yours to decide : "
 	read choice
 
@@ -15,10 +22,14 @@ do
 			echo "1.Git "
 			echo "2.Intern"
 			echo "3.AI Agents "
-			echo "4.Business-startup"
+			echo "4.PQC"
 			echo "5.Verilog"
-			echo "6.File communication "
-			echo "7.Exit"
+			echo "6.RTPY"
+			echo "7.Class hub"
+			echo "8.Practice Problems"
+			echo "9.Resume"
+			echo "10.Vehicle design"
+			echo "11.Exit"
 		echo "Luckiest dynasty to enter : "
 		read choice
 
@@ -98,9 +109,8 @@ do
 			echo "Files are loading \n\n"
 			echo "Sucessfully loaded "
 
-			dolphin "/mnt/Apps/Project_bin/AI agents/"
-        
-		
+			source ai_agent.sh
+			ai_files		
 		
 		
 		elif [ "$choice" -eq 4 ]; then
@@ -138,41 +148,40 @@ do
 				echo "3.PQC ARCH 3"
 				echo "4.Pqc-snn-chip-complete "
 				echo "5.Kyber-deploy "
-				echo "6.Sri hari"
 				echo "7.Exit"
-
+				
 					if [ "$choice" -eq 1 ]; then
 
 						echo "Knowledge acquisition in progress... "
 						echo "Research protocol initiated..."
 						echo "Loading experiments..."
+						source pqc.sh
+						
+						pqc_arch1   #function call only opens the files and github
+						
 
 
-						dolphin "/mnt/Apps/Project_bin/buisness-startup/PYQ/Code/PQC - BEST - ARCH 1/"
-						xdg-open "https://github.com/Rohith1902/AI-TRACKING-PQC-SYSTEM"
+						
 
 					elif [ "$choice" -eq 2 ]; then
 
-						dolphin "/mnt/Apps/Project_bin/buisness-startup/PYQ/Code/PQC - BEST - ARCH 2/"
-						
+						pqc_arch2
 
 					elif [ "$choice" -eq 3 ]; then
-
-						dolphin "/mnt/Apps/Project_bin/buisness-startup/PYQ/Code/PQC - BEST - ARCH 3/"
-
+						pqc_arch3
 
 					elif [ "$choice" -eq 4 ];then
 
-						dolphin "/mnt/Apps/Project_bin/buisness-startup/PYQ/Code/pqc_snn_chip_complete/"
+						pqc_snn
 
 					elif [ "$choice" -eq 5 ];then
 
-						dolphin "/mnt/Apps/Project_bin/buisness-startup/PYQ/Code/kyber-deploy/"
+						pqc_kyber_deploy
 					
 					elif [ "$choice" -eq 6 ];then
 
-						dolphin "/mnt/Apps/Project_bin/buisness-startup/PYQ/Code/sri-hari/"
-					
+						#dolphin "/mnt/Apps/Project_bin/buisness-startup/PYQ/Code/sri-hari/"
+						echo "Just working"
 					elif [ "$choice" -eq 7 ];then
 
 						echo "Startup over !! Work every waking hours !!"
@@ -199,10 +208,14 @@ do
 
 				if [ "$choice" -eq 1 ]; then
 					dolphin "/mnt/Apps/Project_bin/buisness-startup/PYQ/Research/Arch -1/"
+					tree "/mnt/Apps/Project_bin/buisness-startup/PYQ/Research/Arch -1/"
 				elif [ "$choice" -eq 2 ]; then
 					dolphin "/mnt/Apps/Project_bin/buisness-startup/PYQ/Research/Arch -2/"
+					tree "/mnt/Apps/Project_bin/buisness-startup/PYQ/Research/Arch -2/"
 				elif [ "$choice" -eq 3 ]; then
 					dolphin "/mnt/Apps/Project_bin/buisness-startup/PYQ/Research/Arch -3/"
+					tree "/mnt/Apps/Project_bin/buisness-startup/PYQ/Research/Arch -3/"
+
 				elif [ "$choice" -eq 4 ]; then
 					folder="/mnt/Apps/Project_bin/buisness-startup/PYQ/Research/on code/"
 					dolphin "$folder" &
@@ -215,7 +228,7 @@ do
 					dolphin_pid=$!
 					read
 					kill "$dolphin_pid"
-				elif [ "$choice" -eq  6]; then
+				elif [ "$choice" -eq  6 ]; then
 					break
 				else 
 					echo "Try again"
@@ -226,7 +239,12 @@ do
 		done  #closing business loop
 		elif [ "$choice" -eq 5 ]; then 
 			source verilog.sh
+		elif [ "$choice" -eq 6 ]; then
+			source rtpy.sh
+			go_to_path
 		elif [ "$choice" -eq 7 ]; then
+			source class_hub.sh
+		elif [ "$choice" -eq 11 ]; then
 			break
 		fi
 
@@ -236,6 +254,7 @@ do
 		echo "Project Tracked "
 
 	elif [ "$choice" -eq 3 ]; then
+		source dir.sh
 		while true
 		do
 		echo "1.To create a folder "
@@ -245,25 +264,26 @@ do
 
 		echo "\n\nEnter the option : "
 		read choice 
-		source dir.sh
+		
 
 		if [ "$choice" -eq 1 ]; then
 			create_dir
 		elif [ "$choice" -eq 2 ]; then
 			go_to_dir
-		elif [ "$choice" -eq 2 ]; then
+		elif [ "$choice" -eq 3 ]; then
 			echo "Done !! \n\n"
 			break
 
 
 		fi
 		done
-
 	elif [ "$choice" -eq 4 ]; then
+		python3 to_do.py
+	elif [ "$choice" -eq 5 ]; then
 
 		sudo zypper clean  --all && sudo zypper ref -fsb && sudo zypper dup -l --allow-vendor-change
 
-	elif [ "$choice" -eq 5 ]; then
+	elif [ "$choice" -eq 6 ]; then
 
 		sudo reboot
 	

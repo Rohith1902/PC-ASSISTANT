@@ -3,7 +3,7 @@ git_repo_creation(){
     git add .
     echo "Enter the First commit message : ";
     read commit
-    git inital commit -m "$commit"
+    git commit -m "$commit"
     echo "\n\nCreate a repository in you git hub and enter the link : "
     read repo
     git remote add origin "$repo"
@@ -26,13 +26,15 @@ git_push(){
 git_clone(){
     echo "Enter the repo link to clone : "
     read clone
-    echo clone "$clone"
+    git clone "$clone"
 }
 
 git_pull(){
-    git pull origin work 
+    git pull origin main 
     git add .
-    git commit -m "My changes "
+    echo "Enter the commit messages :  "
+    read My_changes 
+    git commit -m "$My_changes"
     git push
 }
 
