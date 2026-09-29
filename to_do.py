@@ -11,6 +11,7 @@ def build_to(sub):
             print("Today's schedule : ")
             for i in sub:            
                 print(i)
+            print("=====================\n")
 
 def block():
     sub = []
@@ -19,7 +20,8 @@ def block():
 
             1.Build To-do list
             2.Check the completed 
-            3.Exit
+            3.Show Today's To-do
+            4.Exit
         """)
         ch = int(input("Enter what to do : "))
         
@@ -70,14 +72,19 @@ def block():
                         print(i)
 
                     
-
-        elif ch == 3:
+        elif ch == 3 :
+            showc(sub)
+        elif ch == 4:
             print("See you ")
             break
 
         else:
             print("Invalid option")
 
+def showc(sub):
+    print("Today's schedule : ")
+    for i in sub:            
+        print(i)
 
 
 print("\n\n     Welcome to TO-DO list ")

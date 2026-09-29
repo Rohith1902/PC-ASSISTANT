@@ -24,5 +24,9 @@ while true
                 2.Compete project to run in localhost
                 3.Exit 
                 "
+            if [ "$choice" -eq 1 ]; then
+                echo "This is template of class hub "
+            elif [ "$choice" -eq 2 ]
+                    
         
             
